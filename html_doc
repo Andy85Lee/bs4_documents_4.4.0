@@ -1,0 +1,71 @@
+# -*- coding:utf-8 -*-
+html_doc = """
+<html><head><title>The Dormouse's story</title>
+<b><!--i'm comment--></b></head>
+<body>
+<p class="title"><b>The Dormouse's story</b></p>
+
+<p class="story">Once upon a time there were three little sisters; and their names were
+<a href="http://example.com/elsie" class="sister" id="link1">Elsie</a>,
+<a href="http://example.com/lacie" class="sister" id="link2">Lacie</a> and
+<a href="http://example.com/tillie" class="sister" id="link3">Tillie</a>;
+and they lived at the bottom of a well.</p>
+
+<p class="story">...</p>
+"""
+
+from bs4 import BeautifulSoup
+soup=BeautifulSoup(html_doc,'html.parser')
+soup_head=soup.head
+for child in soup_head.children:
+  print child
+#print soup.title.contents[0].contents
+#print soup_head.contents
+#print soup_head.contents[2]
+#print soup.contents
+#print len(soup.contents)
+#print soup.contents[1].name
+#print soup.name
+#print soup.prettify()
+#print soup.p.prettify()
+#comment=soup.b.string
+#print type(comment)
+#print comment
+#print soup.b.prettify()
+#print 'soup.title :',soup.title
+#print 'soup.title.name :',soup.title.name
+#print 'soup.title.string :',soup.title.string
+#print 'soup.title.parent.name :',soup.title.parent.name
+#print 'soup.p :',soup.p
+#print "soup.p['class'] :",soup.p['class']
+#print 'soup.a :',soup.a
+#print "soup.find_all('a') :",soup.find_all('a')
+#print "soup.find(id='link3') :",soup.find(id='link3')
+#for link in soup.find_all('a'):
+#  print link.get_text()
+#print soup.get_text()
+#tag_b=soup.b
+#tag_b.name='blockquote'
+#print tag_b
+#print soup.a['href']
+#tag_a=soup.a
+#print 'tag_a :',tag_a
+#print 'tag_a.string :',tag_a.string
+#tag_p=soup.p
+#print tag_p.string
+#tag_p.string.replace_with('haha')
+#print tag_p.string
+#print type(tag_p.string)
+#tag_p=unicode(tag_p.string)
+#print tag_p,type(tag_p)
+#class_attrsOFtag_a=tag_a['class']
+#print class_attrsOFtag_a
+#class_attrsOFtag_a=['sister','brother']
+#print class_attrsOFtag_a
+#soup.a['class']=class_attrsOFtag_a
+#print 'soup.a :',soup.a
+#attr_href=tag_a['href']
+#attr_id=tag_a['id']
+#attr_class=tag_a['class']
+##attr_class='class_ch'
+#print attr_class
