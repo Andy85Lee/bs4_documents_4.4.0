@@ -16,9 +16,21 @@ and they lived at the bottom of a well.</p>
 
 from bs4 import BeautifulSoup
 soup=BeautifulSoup(html_doc,'html.parser')
-soup_head=soup.head
-for child in soup_head.children:
-  print child
+print soup.title.next_sibling.next_sibling
+#for parent in soup.a.parents:
+#  print 'parent :',parent
+#  if parent is None:
+#    print 'parent'
+#  else:
+#    print (parent.name)
+#for string in soup.stripped_strings:
+#  print repr(string)
+#print soup.b.string
+#soup_head=soup.head
+#print type(soup_head.children)
+#for child in soup_head.descendants:
+#  print child
+#print len(list(soup_head.children)),len(list(soup_head.descendants))
 #print soup.title.contents[0].contents
 #print soup_head.contents
 #print soup_head.contents[2]
